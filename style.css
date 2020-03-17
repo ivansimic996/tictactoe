@@ -1,0 +1,217 @@
+:root {
+    --primary-color: #2364fa;
+    --primary-color--dark: rgb(168, 75, 4);
+    --secondary-color: #faa303;
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+.main {
+    flex: 1;
+    overflow: scroll;
+}
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 4rem;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.game__heading {
+    border-bottom: 1px solid lightgrey;
+    text-transform: uppercase;
+    width: 90%;
+    color: var(--primary-color);
+    font-size: 4rem;
+    padding-bottom: 5px;
+    margin-top: 1rem;
+    font-weight: 400;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.game__winner{
+    margin: 1rem;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    visibility: hidden;
+}
+.game__winner--show{
+    visibility: visible;
+}
+.game__form {
+    margin-bottom: 1rem;
+    display: none;
+}
+.game__form--show{
+    display: block;
+}
+.game__form input[name='winner']{
+    outline: blue;
+    border: none;
+    width: 15rem;
+    border-bottom: 1px solid var(--primary-color);
+    margin-right: 2rem;
+}
+.game__form input[name='winner']:focus{
+    border-bottom-width: 2px;
+    transition: border-bottom-width .5s;
+}
+.game__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+.btn{
+    border: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 2px;
+    
+}
+.btn--reset {
+    color: var(--primary-color);
+    background-color: #fff;
+}
+.btn--submit {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.xo-table {
+    display: grid;
+    width: 60%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    margin: 0 auto;
+    position: relative;
+}
+.xo-table::after {
+    pointer-events: none;
+    content: '';
+    border: 11px solid var(--primary-color);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.bg-wrap {
+    background-color: var(--primary-color);
+    padding: 2rem 1rem;
+    width: 100%;
+}
+
+.xo-table__cell{
+    display: flex;
+    justify-content: center;
+    height: 10vw;
+    align-items: center;
+    font-size: 8rem;
+    border: .2rem solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.circle{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    position: relative;
+}
+.circle::before, .circle::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.circle::before {
+    border: .7rem solid transparent;
+    
+}
+.circle::after {
+    border: .7rem solid transparent;
+    
+}
+.circle:hover::before {
+    border-top-color: var(--secondary-color);
+    border-right-color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+    transition: border-top-color 0s linear,
+                border-right-color 0s linear .1s,
+                border-bottom-color 0s linear .15s;
+}
+.circle:hover::after {
+    border-top-color: var(--secondary-color);
+    transform: rotate(270deg);
+    transition: transform .5s;
+}
+.sidebar {
+    flex: 0 0 25%;
+    overflow: scroll;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.sidebar__header{
+    text-align: center;
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin: 2rem 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.winner-list__item {
+    overflow: scroll;
+    width: 95%;
+    margin: 0 auto;
+    font-size: 1rem;
+    padding: 1.5rem 0 1.5rem 1rem;
+    letter-spacing: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.winner-name::after{
+    content: '\A';
+    white-space: pre-line;
+}
+@media only screen and (max-width: 1024px){
+    html {
+        font-size: 85% !important;
+    }
+}
+@media only screen and (max-width: 768px) {
+    
+    .container {
+        flex-direction: column;
+    }
+    .main {
+        overflow: visible;
+    }
+    .game{
+        margin: 1rem;
+    }
+    .bg-wrap {
+        padding: .5rem;
+    }
+    .xo-table{
+        width: 100%;
+    }
+    .xo-table__cell{
+        height: 20vw;
+    }
+    .sidebar{
+        overflow: visible;
+        margin: 0 1rem;
+    }
+}

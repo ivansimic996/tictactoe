@@ -4,8 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="main">
+            <div class="game">
+                <h1 class="game__heading">Tic tac toe</h1>
+                <h3 class="game__winner">Winner: X moves: 5</h3>
+                <form class="game__form" action="#">
+                    <input name="winner" placeholder="winner name" type="text">
+                    <button class="btn btn--submit" type="submit">Submit</button>
+                </form>
+                <div class="bg-wrap">
+                    <div class="xo-table">
+                        <div class="xo-table__cell"><div class="cell-item"></div></div>
+                        <div class="xo-table__cell"><div class="cell-item"></div></div>
+                        <div class="xo-table__cell"><div class="cell-item"></div></div>
+                        <div class="xo-table__cell"><div class="cell-item"></div></div>
+                        <div class="xo-table__cell"><div class="cell-item"></div></div>
+                        <div class="xo-table__cell"><div class="cell-item"></div></div>
+                        <div class="xo-table__cell"><div class="cell-item"></div></div>
+                        <div class="xo-table__cell"><div class="cell-item"></div></div>
+                        <div class="xo-table__cell"><div class="cell-item"></div></div>
+                    </div>
+                </div>
+                <div class="game__controls">
+                    <button class="btn btn--reset">RESTART GAME</button>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <h2 class="sidebar__header">
+                WINNERS
+            </h2>
+            <ul class="winner-list">
+                <li class="winner-list__item">Winner: Vuk, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Maja, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Milica, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Jovan, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Aleksandar, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Vanja, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Vuk, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Vuk, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Vuk, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Vuk, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Vuk, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Vuk, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Vuk, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Vuk, &nbsp;Symbol: X, Moves 5</li>
+                <li class="winner-list__item">Winner: Vuk, &nbsp;Symbol: X, Moves 5</li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
