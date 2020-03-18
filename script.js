@@ -113,16 +113,20 @@ modal.classList.toggle("show-modal");
 winnerNameTextbox.value = "";
 
 updateWinnerList(scores);
+
 }
 
+
 function updateWinnerList(scores) {
+    if (scores) {
     let finalHtml = ""
     for (let i=0; i<scores.length; i++) {
         
         finalHtml +=`<div class="winner-list-element"> Winner: ${scores[i].winner} Symbol: ${scores[i].symbol} Moves: ${scores[i].moves} </div>`;
-        
+
     }
     winnerList.innerHTML = finalHtml;
+}
 }
 
 function prepareBoard() {
