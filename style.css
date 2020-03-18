@@ -9,7 +9,9 @@
 *::after{
     box-sizing: border-box;
 }
-
+body {
+    background-color: var(--secondary-color);
+}
 .container {
     display: flex;
     height: 100vh;
@@ -19,6 +21,7 @@
     overflow: scroll;
 }
 .game {
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +33,7 @@
     border-bottom: 1px solid lightgrey;
     text-transform: uppercase;
     width: 90%;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-size: 4rem;
     padding-bottom: 5px;
     margin-top: 1rem;
@@ -81,14 +84,14 @@
 }
 .btn--reset {
     font-size: 18px;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     background-color: #fff;
 }
 .btn--reset:hover {
-    color: var(--primary-color--dark);
+    color: var(--secondary-color--dark);
 }
 .btn--reset:active {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 .btn--submit {
     background-color: var(--primary-color);
@@ -205,6 +208,8 @@
 .sidebar {
     flex: 0 0 25%;
     overflow: scroll;
+    color: white;
+    background-color: var(--primary-color);
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
