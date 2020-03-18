@@ -116,6 +116,7 @@ const UICtrl = (function(){
                         document.querySelector('.winner-list').insertAdjacentHTML('beforeend', 
                         `<li class="winner-list__item">Winner: ${name}, &nbsp;Symbol: ${winnerInfo.winner}, Moves ${winnerInfo.moves}</li>`);
                         document.querySelector('input').disabled = true;
+                        document.querySelector('.btn--submit').disabled = true;
                         document.querySelector('.btn--submit').classList.add('btn--disabled');
                 },
                 updateCell(target, winnerInfo) {
@@ -138,6 +139,7 @@ const UICtrl = (function(){
                         document.querySelector('.game__winner').classList.remove('game__winner--show');
                         document.querySelector('.game__form').classList.remove('game__form--show');
                         document.querySelector('input').disabled = false;
+                        document.querySelector('.btn--submit').disabled = false;
                         document.querySelector('.btn--submit').classList.remove('btn--disabled');
                         
                 },
