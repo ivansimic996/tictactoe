@@ -128,12 +128,12 @@ const UICtrl = (function(){
                         }
                 },
                 reset(){
-                        const items = document.getElementsByClassName('cell-item');
+                        const items = document.getElementsByClassName('xo-item');
                         Array.from(items).forEach(item => {
                                 item.classList.remove('circle');
                                 item.classList.remove('cross');
-                                item.classList.remove('cell-item--dark');
-                                item.classList.remove('cell-item--light');
+                                item.classList.remove('xo-item--dark');
+                                item.classList.remove('xo-item--light');
 
                         });
                         document.querySelector('.game__winner').classList.remove('game__winner--show');
@@ -144,13 +144,13 @@ const UICtrl = (function(){
                         
                 },
                 highlightWinnerSymbol: function(winCombination){
-                        const cells = document.getElementsByClassName('cell-item');
+                        const cells = document.getElementsByClassName('xo-item');
                         Array.from(cells).forEach((cell, i) => {
                                 if(winCombination.indexOf(i) !== -1){
-                                        cell.classList.add('cell-item--light');
+                                        cell.classList.add('xo-item--light');
                                 }
                                 else{
-                                        cell.classList.add('cell-item--dark');
+                                        cell.classList.add('xo-item--dark');
                                 }
                         })
                 },
@@ -161,7 +161,7 @@ const UICtrl = (function(){
 const ctrl = (function(LogicCtrl, UICtrl){
         function handleMove(e){
                 let target;
-                if(e.target.classList.contains('cell-item')){
+                if(e.target.classList.contains('xo-item')){
                         target = e.target.parentNode;
                 }
                 else {

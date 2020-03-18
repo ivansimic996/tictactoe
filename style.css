@@ -13,18 +13,17 @@ body {
     background-color: var(--secondary-color);
 }
 .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
     height: 100vh;
 }
 .main {
-    flex: 1;
     overflow: scroll;
 }
 .game {
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    justify-items: center;
     margin: 2rem 4rem;
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -69,41 +68,10 @@ body {
     transition: border-bottom-width .5s;
 }
 .game__controls {
-    display: flex;
+    display: grid;
     height: 50px;
 }
-.btn{
-    border: none;
-    font-weight: 500;
-    padding: 10px 20px;
-    border-radius: 2px;
-}
-.btn--reset {
-    font-size: 18px;
-    color: var(--secondary-color);
-    background-color: #fff;
-}
-.btn--reset:hover {
-    color: var(--secondary-color--dark);
-}
-.btn--reset:active {
-    color: var(--secondary-color);
-}
-.btn--submit {
-    background-color: var(--primary-color);
-    color: #fff;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-.btn--submit:hover {
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-.btn--disabled:hover{
-    cursor: initial;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-.btn--submit:active {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
+
 .xo-table {
     display: grid;
     background-color: var(--primary-color);
@@ -139,7 +107,7 @@ body {
     color: var(--secondary-color);
 }
 
-.cell-item{   
+.xo-item{   
     z-index: 1;
     border-radius: 100%;
     position: relative;
@@ -147,7 +115,7 @@ body {
     height: 4rem;
 }
 
-.cell-item::before, .cell-item::after {
+.xo-item::before, .xo-item::after {
     position: absolute;
     content: '';
     top: 0;
@@ -188,21 +156,20 @@ body {
     transform: rotateZ(-45deg);
 }
 
-.cell-item--dark.circle::after {
+.xo-item--dark.circle::after {
     border-color: var(--secondary-color--dark);
 }
-.cell-item--dark.cross::after,
-.cell-item--dark.cross::before {
+.xo-item--dark.cross::after,
+.xo-item--dark.cross::before {
     background-color: var(--secondary-color--dark);
 }
 
-.cell-item--light.circle::after,
-.cell-item--light.cross::after,
-.cell-item--light.cross::before {
+.xo-item--light.circle::after,
+.xo-item--light.cross::after,
+.xo-item--light.cross::before {
     box-shadow: 2px 2px 40px 2px var(--secondary-color);
 }
 .sidebar {
-    flex: 0 0 25%;
     overflow: scroll;
     color: white;
     border-radius: 2px;
@@ -219,19 +186,49 @@ body {
 }
 
 .winner-list__item {
-    overflow: scroll;
-    width: 95%;
-    margin: 0 auto;
     font-size: 1rem;
     padding: 1.5rem 0 1.5rem 1rem;
     letter-spacing: 1.5;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+.btn{
+    border: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 2px;
+}
+.btn--reset {
+    font-size: 18px;
+    color: var(--secondary-color);
+    background-color: #fff;
+}
+.btn--reset:hover {
+    color: var(--secondary-color--dark);
+}
+.btn--reset:active {
+    color: var(--secondary-color);
+}
+.btn--submit {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.btn--submit:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.btn--submit:active {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.btn--disabled:hover{
+    cursor: initial;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
 
 @media only screen and (max-width: 1024px){
     
     .container {
-        flex-direction: column;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
     }
     .main {
         overflow: visible;
@@ -242,7 +239,6 @@ body {
     .xo-table{
         grid-template-rows: repeat(3, 150px);
         grid-template-columns: repeat(3,1fr);
-        width: 100%;
     }
     .xo-table::after {
         height: 450px;
@@ -268,7 +264,6 @@ body {
         grid-template-rows: repeat(3, 100px);
     }
     .xo-table::after {
-        box-sizing: border-box;
         height: 300px;
         border-left-width: 10px;
         border-right-width: 10px;
