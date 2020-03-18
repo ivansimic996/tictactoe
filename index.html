@@ -3,9 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
+
+    <div class="modal">
+        <div class="modal-content">
+            <div class="winner-name-input">      
+                <input id="winner-textbox" type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Winner name</label>
+                <p class="draw-message">It's a draw!</p>
+                <button class="add-winner">ADD</button>
+              </div>
+        </div>
+    </div>
+
+
+
+    <div class="containter">
+
+       
+     
+    <div class="content-header-containter">
+
+    <header class="header">
+        <span id="tic"> Tic </span><span id="tac">Tac</span><span id="toe">Toe</span>
+    </header>
+
+    <div class="content">
+        
+        <div class="game-board">
+            <div class="row">
+                <span class="square square0"></span>
+                <span class="square square1"></span>
+                <span class="square square2"></span>
+            </div>
+            <div class="row">
+              <span class="square square3"></span>
+              <span class="square square4"></span>
+              <span class="square square5"></span>
+            </div>
+            <div class="row">
+              <span class="square square6"></span>
+              <span class="square square7"></span>
+              <span class="square square8"></span>
+            </div>
+          </div>
+          
+            <button class="play">PLAY</button>
+         
+          
+        
+        
+    </div>
+
+    </div>
+
+
+    <div class="sidebar">
+        <div class="scoreboard-title">WINNERS</div>
+        <div class="winner-list"></div>
+    </div>
+
+ 
     
+    </div>
+    <script src = "script.js"></script>
+
 </body>
 </html>
